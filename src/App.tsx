@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./App.css";
+import { Child } from "./components/child";
 import { useDebounce } from "./hooks/use-debounce";
 
 function App() {
@@ -19,7 +20,6 @@ function App() {
           value={search}
           onChange={(e) => {
             // send request to the server and get the data and set the state
-            console.log("before debounced");
 
             setSearch(e.target.value);
           }}
@@ -40,6 +40,7 @@ function App() {
           <button>Submit</button>
         </form>
       </main>
+      <Child age={20} task={taskDebounced} />
     </>
   );
 }
